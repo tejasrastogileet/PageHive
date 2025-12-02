@@ -14,4 +14,4 @@ export default function Loader({ size = "large" }) {
     </View>
   );
 }
-// Deleted: Loader component removed for Clerk integration.
+ 

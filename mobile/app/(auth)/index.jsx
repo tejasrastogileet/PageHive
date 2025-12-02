@@ -6,6 +6,7 @@ import PaghiveScreenWrapper from "../../components/PaghiveScreenWrapper";
 import PaghiveInput from "../../components/PaghiveInput";
 import PaghiveButton from "../../components/PaghiveButton";
 import PaghiveCard from "../../components/PaghiveCard";
+import PaghiveHeader from "../../components/PaghiveHeader";
 import { PAGHIVE_COLORS } from "../../constants/paghiveTheme";
 
 export default function LoginScreen() {
@@ -49,8 +50,14 @@ export default function LoginScreen() {
     <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <PaghiveScreenWrapper>
         <View style={{ flex: 1, justifyContent: "center", paddingHorizontal: 16 }}>
+          {/* App Title and Subtitle */}
+          <PaghiveHeader 
+            title="PageHive" 
+            subtitle="Your Smart Library Companion" 
+            style={{ marginBottom: 0, marginTop: 12 }}
+          />
           <PaghiveCard>
-            <Text style={{ fontSize: 28, fontWeight: "700", color: PAGHIVE_COLORS.primaryText, marginBottom: 8, textAlign: "center" }}>
+            <Text style={{ fontSize: 22, fontWeight: "700", color: PAGHIVE_COLORS.primaryText, marginBottom: 8, textAlign: "center" }}>
               Welcome Back
             </Text>
             <Text style={{ fontSize: 14, color: PAGHIVE_COLORS.secondaryText, textAlign: "center", marginBottom: 24 }}>
@@ -93,9 +100,16 @@ export default function LoginScreen() {
 
             <View style={{ flexDirection: "row", justifyContent: "center", marginTop: 16, gap: 4, flexWrap: "wrap" }}>
               <Text style={{ color: PAGHIVE_COLORS.secondaryText, fontSize: 14 }}>Don't have an account?</Text>
-              <TouchableOpacity onPress={() => router.push("/signup")}>
+              <TouchableOpacity onPress={() => router.push("/signup")}> 
                 <Text style={{ color: PAGHIVE_COLORS.accentGold, fontSize: 14, fontWeight: "600" }}>Sign Up</Text>
               </TouchableOpacity>
+            </View>
+
+            {/* Footer */}
+            <View style={{ position: "absolute", right: 12, bottom: 8 }}>
+              <Text style={{ fontSize: 11, color: PAGHIVE_COLORS.secondaryText, fontStyle: "italic" }}>
+                Made with ❤ by Tejas
+              </Text>
             </View>
           </PaghiveCard>
         </View>

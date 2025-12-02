@@ -1,5 +1,1 @@
-{
-  "dependencies": {
-    "@clerk/clerk-expo": "^2.19.6"
-  }
-}
+{}

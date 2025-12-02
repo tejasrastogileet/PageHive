@@ -5,7 +5,7 @@ export const useSimpleAuthStore = create((set) => ({
   user: null,
   isLoading: true,
 
-  // Initialize — check if user exists in AsyncStorage on app start
+   
   initAuth: async () => {
     try {
       const storedUser = await AsyncStorage.getItem("user");
@@ -20,7 +20,7 @@ export const useSimpleAuthStore = create((set) => ({
     }
   },
 
-  // Sign up — save name + email to AsyncStorage and set user
+   
   signUp: async (name, email) => {
     try {
       if (!name || name.trim().length === 0) {
@@ -29,7 +29,7 @@ export const useSimpleAuthStore = create((set) => ({
       if (!email || email.trim().length === 0) {
         throw new Error("Email is required");
       }
-      // Simple email validation
+   
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         throw new Error("Please enter a valid email");
@@ -44,7 +44,7 @@ export const useSimpleAuthStore = create((set) => ({
     }
   },
 
-  // Login — check if name + email match (simple lookup)
+   
   logIn: async (name, email) => {
     try {
       if (!name || name.trim().length === 0) {
@@ -53,8 +53,7 @@ export const useSimpleAuthStore = create((set) => ({
       if (!email || email.trim().length === 0) {
         throw new Error("Email is required");
       }
-      // In a real app, verify against backend or stored list
-      // For simplicity, just accept any name + email combination
+   
       const user = { name: name.trim(), email: email.trim(), id: Date.now().toString() };
       await AsyncStorage.setItem("user", JSON.stringify(user));
       set({ user });
@@ -65,7 +64,7 @@ export const useSimpleAuthStore = create((set) => ({
     }
   },
 
-  // Logout — clear user and remove from AsyncStorage
+   
   logOut: async () => {
     try {
       await AsyncStorage.removeItem("user");

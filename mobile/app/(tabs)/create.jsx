@@ -133,7 +133,7 @@ export default function Create() {
     >
       <PaghiveScreenWrapper>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <PaghiveHeader title="Add Book Recommendation" subtitle="Share your favorite reads with others" />
+          <PaghiveHeader title="PageHive" subtitle="Add Book Recommendation" />
           <PaghiveCard>
             <PaghiveInput
               placeholder="Book Title"

@@ -3,7 +3,7 @@ import { useRouter } from "expo-router";
 import { API_URL } from "../constants/api";
 import { useSimpleAuthStore } from "../store/simpleAuthStore";
 
-// Hook that returns API helpers - no auth tokens needed
+ 
 export default function useApi() {
   const router = useRouter();
   const authStore = useSimpleAuthStore();
@@ -24,7 +24,7 @@ export default function useApi() {
 
         const response = await fetch(url, config);
 
-        // If 401, redirect to login
+         
         if (response.status === 401) {
           authStore.logOut();
           router.replace("/login");

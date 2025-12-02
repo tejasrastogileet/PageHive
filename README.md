@@ -304,7 +304,6 @@ npm test           # Run tests
 - React Native 0.81.5
 - Expo ~54.0.0
 - expo-router ~6.0.15
-- @clerk/clerk-expo ^2.19.6
 - expo-image-picker, expo-image, expo-secure-store
 - zustand (state management)
 - react-native-safe-area-context

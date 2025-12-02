@@ -11,19 +11,17 @@ export default function RootLayout() {
   const initAuth = useSimpleAuthStore((state) => state.initAuth);
 
   useEffect(() => {
-    // Initialize auth on app start (check AsyncStorage)
+    
     initAuth();
   }, [initAuth]);
 
-  // Watch for user state changes and navigate accordingly
+   
   useEffect(() => {
     if (!isLoading) {
       if (user) {
-        // User logged in - navigate to home
-        console.log("User logged in, navigating to home");
+        
       } else {
-        // User logged out - navigate to auth
-        console.log("User logged out, navigating to auth");
+        
       }
     }
   }, [user, isLoading]);

@@ -122,9 +122,23 @@ export default function Profile() {
         <PaghiveHeader title="Profile" subtitle={`Welcome, ${user?.name || "User"}`} />
         <TouchableOpacity
           onPress={handleLogout}
-          style={{ paddingHorizontal: 12, paddingVertical: 8, backgroundColor: PAGHIVE_COLORS.accentGold, borderRadius: 8 }}
+          style={{
+            paddingHorizontal: 18,
+            paddingVertical: 8,
+            backgroundColor: PAGHIVE_COLORS.accentGold,
+            borderRadius: 8,
+            alignItems: "center",
+            justifyContent: "center",
+            minWidth: 64,
+            marginLeft: 8,
+            shadowColor: PAGHIVE_COLORS.accentGold,
+            shadowOffset: { width: 0, height: 2 },
+            shadowOpacity: 0.12,
+            shadowRadius: 4,
+            elevation: 2,
+          }}
         >
-          <Text style={{ color: PAGHIVE_COLORS.primary, fontWeight: "600", fontSize: 12 }}>Logout</Text>
+          <Text style={{ color: PAGHIVE_COLORS.primary, fontWeight: "700", fontSize: 14, letterSpacing: 0.5 }}>Logout</Text>
         </TouchableOpacity>
       </View>
       <Text style={{ color: PAGHIVE_COLORS.secondaryText, marginBottom: 12 }}>{books.length} books</Text>

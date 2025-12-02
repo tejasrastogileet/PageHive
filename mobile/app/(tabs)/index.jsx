@@ -106,7 +106,7 @@ export default function Home() {
 
   return (
     <PaghiveScreenWrapper>
-      <PaghiveHeader title="Home" subtitle="Your Book List" />
+      <PaghiveHeader title="PageHive" subtitle="Your Book List" />
       <FlatList
         data={books}
         renderItem={renderItem}
